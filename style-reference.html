@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payoneer vs Cenoa Fee Calculator 2025 — See Your Annual Savings</title>
+  <meta name="description" content="Compare Payoneer fees vs Cenoa. See exactly how much you save per year with Cenoa's 0.99% flat fee and zero monthly charges." />
+  <meta property="og:title" content="Payoneer vs Cenoa Fee Calculator — See Your Savings" />
+  <meta property="og:description" content="Calculate your annual savings switching from Payoneer to Cenoa. Real numbers, real savings." />
+  <link rel="canonical" href="https://tools.cenoa.com/calculators/payoneer-vs-cenoa.html" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NDV9WQ7');</script>
+  <!-- End Google Tag Manager -->
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: {
+        'cenoa-blue': '#0A3DBF',
+        'cenoa-mint': '#88DCC4',
+        'cenoa-dark': '#061E6E',
+      }}}
+    }
+  </script>
+  <link rel="stylesheet" href="../shared.css" />
+  <style>
+    /* Animated savings counter */
+    @keyframes pulse-savings {
+      0%, 100% { transform: scale(1); }
+      50%       { transform: scale(1.03); }
+    }
+    .savings-pulse { animation: pulse-savings 2s ease-in-out infinite; }
+
+    /* Progress bar */
+    .fee-bar { height: 12px; border-radius: 6px; transition: width 0.6s ease; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NDV9WQ7"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- ===== HEADER ===== -->
+<header class="cenoa-header">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+    <a href="https://cenoa-nextjs-pearl.vercel.app/">
+      <img src="../../qualifier-page/cenoa-logo.jpg" alt="Cenoa" class="h-8" />
+    </a>
+    <a href="https://onelink.ext.cenoa.com/K9pU/cenoacomstart" class="cta-btn">Open Free Account</a>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero-gradient text-white py-12 px-4">
+  <div class="max-w-3xl mx-auto text-center">
+    <p class="text-cenoa-mint font-semibold text-sm uppercase tracking-widest mb-2">Fee Comparison Calculator</p>
+    <h1 class="text-3xl md:text-4xl font-extrabold mb-3">Payoneer vs Cenoa</h1>
+    <p class="text-white/80 text-lg">See exactly how much you overpay with Payoneer — and what you keep with Cenoa.</p>
+    <div class="mt-3">
+    </div>
+  </div>
+</section>
+
+<!-- ===== CALCULATOR ===== -->
+<main class="max-w-5xl mx-auto px-4 py-10">
+
+  <!-- INPUTS -->
+  <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-8">
+    <h2 class="font-bold text-lg text-cenoa-dark mb-6">Your Monthly Earnings</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- Monthly amount -->
+      <div>
+        <label class="calc-label" for="monthly">Monthly Earnings (USD)</label>
+        <div class="relative">
+          <span class="input-prefix font-bold">$</span>
+          <input type="number" id="monthly" class="calc-input pl-8" placeholder="5,000" min="0" step="100" value="5000" oninput="calculate()" />
+        </div>
+      </div>
+
+      <!-- Source -->
+      <div>
+        <label class="calc-label" for="source">Payment Source</label>
+        <select id="source" class="calc-select" onchange="calculate()">
+          <option value="amazon">Amazon Marketplace</option>
+          <option value="upwork">Upwork</option>
+          <option value="fiverr">Fiverr</option>
+          <option value="direct">Direct Client</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <!-- Withdrawals per month -->
+      <div>
+        <label class="calc-label" for="withdrawals">Withdrawals per Month</label>
+        <input type="number" id="withdrawals" class="calc-input" placeholder="4" min="1" max="30" value="4" oninput="calculate()" />
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULTS COMPARISON -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+
+    <!-- Payoneer -->
+    <div class="bg-gray-100 rounded-2xl p-6 border-2 border-gray-200">
+      <div class="flex items-center gap-3 mb-5">
+        <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center text-2xl">🔶</div>
+        <div>
+          <div class="font-bold text-xl">Payoneer</div>
+          <div class="text-xs text-gray-500">3.99% + monthly fees + withdrawal fees</div>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <div class="flex justify-between items-center">
+          <span class="text-sm text-gray-600">Transfer fee (monthly)</span>
+          <span class="font-semibold text-red-600" id="py-transfer-fee">—</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span class="text-sm text-gray-600">Monthly account fee</span>
+          <span class="font-semibold text-red-600">$2.00</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span class="text-sm text-gray-600">Withdrawal fees (<span id="wdCount">4</span>x $3.00)</span>
+          <span class="font-semibold text-red-600" id="py-wd-fee">—</span>
+        </div>
+        <div class="flex justify-between items-center border-t border-gray-300 pt-3">
+          <span class="text-sm font-bold text-gray-700">Total monthly cost</span>
+          <span class="font-bold text-xl text-red-600" id="py-monthly-total">—</span>
+        </div>
+        <!-- Fee bar visual -->
+        <div class="mt-2">
+          <div class="text-xs text-gray-500 mb-1">Fee as % of earnings</div>
+          <div class="bg-gray-200 rounded-full h-3">
+            <div id="py-bar" class="fee-bar bg-red-400" style="width: 0%"></div>
+          </div>
+          <div class="text-xs text-red-500 mt-1 font-semibold" id="py-pct">—</div>
+        </div>
+      </div>
+
+      <div class="mt-5 border-t border-gray-300 pt-4">
+        <div class="flex justify-between items-center">
+          <span class="text-sm font-bold text-gray-700">Annual cost</span>
+          <span class="font-bold text-2xl text-red-600" id="py-annual">—</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cenoa -->
+    <div class="rounded-2xl p-6 border-2 border-cenoa-mint" style="background: var(--cenoa-mint-light);">
+      <div class="flex items-center gap-3 mb-5">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl" style="background: #C7F5EA;">⚡</div>
+        <div>
+          <div class="font-bold text-xl text-cenoa-dark">Cenoa</div>
+          <div class="text-xs text-gray-500">0.99% flat · No monthly fee · No withdrawal fee</div>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <div class="flex justify-between items-center">
+          <span class="text-sm text-gray-600">Transfer fee (0.99%)</span>
+          <span class="font-semibold text-green-700" id="c-transfer-fee">—</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span class="text-sm text-gray-600">Monthly account fee</span>
+          <span class="font-semibold text-green-700">$0.00</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span class="text-sm text-gray-600">Withdrawal fees</span>
+          <span class="font-semibold text-green-700">$0.00</span>
+        </div>
+        <div class="flex justify-between items-center border-t border-green-300 pt-3">
+          <span class="text-sm font-bold text-gray-700">Total monthly cost</span>
+          <span class="font-bold text-xl text-green-700" id="c-monthly-total">—</span>
+        </div>
+        <!-- Fee bar visual -->
+        <div class="mt-2">
+          <div class="text-xs text-gray-500 mb-1">Fee as % of earnings</div>
+          <div class="bg-gray-200 rounded-full h-3">
+            <div id="c-bar" class="fee-bar bg-green-400" style="width: 0%"></div>
+          </div>
+          <div class="text-xs text-green-600 mt-1 font-semibold" id="c-pct">—</div>
+        </div>
+      </div>
+
+      <div class="mt-5 border-t border-green-300 pt-4">
+        <div class="flex justify-between items-center">
+          <span class="text-sm font-bold text-gray-700">Annual cost</span>
+          <span class="font-bold text-2xl text-green-700" id="c-annual">—</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== BIG SAVINGS DISPLAY ===== -->
+  <div class="savings-pulse bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl p-8 text-white text-center mb-8 shadow-lg">
+    <p class="text-green-100 font-semibold uppercase text-sm tracking-widest mb-2">You save every year with Cenoa</p>
+    <div class="text-6xl font-extrabold mb-2" id="big-savings">$0</div>
+    <p class="text-green-100 text-lg" id="savings-monthly-text">($0 per month)</p>
+    <div class="mt-4">
+      <a href="https://onelink.ext.cenoa.com/K9pU/cenoacomstart"
+         class="inline-block bg-white text-green-700 font-bold px-8 py-3 rounded-xl hover:bg-green-50 transition-colors text-lg">
+        Start Saving Now →
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== DETAILED BREAKDOWN TABLE ===== -->
+  <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-8">
+    <h3 class="font-bold text-cenoa-dark text-lg mb-4">5-Year Savings Projection</h3>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Payoneer Total Fees</th>
+            <th>Cenoa Total Fees</th>
+            <th>You Save</th>
+          </tr>
+        </thead>
+        <tbody id="projectionBody">
+          <tr><td colspan="4" class="text-center text-gray-400 py-4">Enter your earnings above to see the projection.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===== FEATURE COMPARISON TABLE ===== -->
+  <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+    <h3 class="font-bold text-cenoa-dark text-lg mb-4">Feature Comparison</h3>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Feature</th><th>Payoneer</th><th>Cenoa</th></tr></thead>
+        <tbody>
+          <tr><td>Transfer fee</td><td class="text-red-600">3.99%</td><td class="text-green-600 font-semibold">0.99%</td></tr>
+          <tr><td>Monthly account fee</td><td class="text-red-600">$2.00/mo</td><td class="text-green-600 font-semibold">Free</td></tr>
+          <tr><td>Withdrawal fee</td><td class="text-red-600">$3.00/withdrawal</td><td class="text-green-600 font-semibold">Free</td></tr>
+          <tr><td>Setup fee</td><td class="text-green-600">Free</td><td class="text-green-600 font-semibold">Free</td></tr>
+          <tr><td>US bank account</td><td class="text-green-600">✓</td><td class="text-green-600 font-semibold">✓</td></tr>
+          <tr><td>Routing + Account number</td><td class="text-green-600">✓</td><td class="text-green-600 font-semibold">✓</td></tr>
+          <tr><td>Currency conversion</td><td class="text-gray-600">Available</td><td class="text-green-600 font-semibold">Available</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-xs text-gray-400 mt-3">* Payoneer rates are indicative based on publicly available information. Actual rates vary by account level and source. Upwork/Fiverr may add platform-side fees.</p>
+  </div>
+</main>
+
+<!-- ===== FOOTER CTA ===== -->
+<footer class="footer-cta">
+  <div class="max-w-3xl mx-auto">
+    <h2>Stop losing money on fees.</h2>
+    <p>Open your free US bank account with Cenoa — 0.99% flat fee, instant withdrawals.</p>
+    <a href="https://onelink.ext.cenoa.com/K9pU/cenoacomstart" class="footer-cta-btn">Open Free Account</a>
+  </div>
+</footer>
+
+<script>
+// ===== Payoneer vs Cenoa Calculator =====
+//
+// Payoneer fee structure:
+//   - Base transfer fee: 3.99% of incoming amount
+//   - Extra platform surcharge: +2% for Upwork/Fiverr (applied on top of 3.99%)
+//   - Monthly account fee: $2.00
+//   - Withdrawal fee: $3.00 per withdrawal
+//
+// Cenoa fee structure:
+//   - 0.99% flat on transfers
+//   - No monthly fee, no withdrawal fee
+
+function calculate() {
+  const monthly     = parseFloat(document.getElementById('monthly').value) || 0;
+  const source      = document.getElementById('source').value;
+  const withdrawals = parseInt(document.getElementById('withdrawals').value) || 4;
+
+  document.getElementById('wdCount').textContent = withdrawals;
+
+  // Payoneer rate — Upwork & Fiverr add 2% platform fee ON TOP
+  let pyPct = 3.99 / 100;
+  if (source === 'upwork' || source === 'fiverr') pyPct += 2.0 / 100;
+
+  // Payoneer monthly costs
+  const pyTransfer = monthly * pyPct;
+  const pyMonthly  = 2.00;
+  const pyWd       = withdrawals * 3.00;
+  const pyTotal    = pyTransfer + pyMonthly + pyWd;
+  const pyAnnual   = pyTotal * 12;
+
+  // Cenoa monthly costs
+  const cTransfer = monthly * 0.0099;
+  const cMonthly  = 0;
+  const cWd       = 0;
+  const cTotal    = cTransfer + cMonthly + cWd;
+  const cAnnual   = cTotal * 12;
+
+  // Savings
+  const monthlySavings = pyTotal - cTotal;
+  const annualSavings  = pyAnnual - cAnnual;
+
+  // Display helper
+  const fmt = v => '$' + Math.abs(v).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+
+  document.getElementById('py-transfer-fee').textContent = fmt(pyTransfer);
+  document.getElementById('py-wd-fee').textContent       = fmt(pyWd);
+  document.getElementById('py-monthly-total').textContent = fmt(pyTotal);
+  document.getElementById('py-annual').textContent        = fmt(pyAnnual);
+
+  document.getElementById('c-transfer-fee').textContent  = fmt(cTransfer);
+  document.getElementById('c-monthly-total').textContent = fmt(cTotal);
+  document.getElementById('c-annual').textContent        = fmt(cAnnual);
+
+  // Fee percentage bars (cap visual at 20% = 100% width)
+  const pyPctDisp = monthly > 0 ? ((pyTotal / monthly) * 100) : 0;
+  const cPctDisp  = monthly > 0 ? ((cTotal  / monthly) * 100) : 0;
+  document.getElementById('py-pct').textContent = pyPctDisp.toFixed(2) + '% of your earnings';
+  document.getElementById('c-pct').textContent  = cPctDisp.toFixed(2) + '% of your earnings';
+  document.getElementById('py-bar').style.width = Math.min(pyPctDisp * 5, 100) + '%';
+  document.getElementById('c-bar').style.width  = Math.min(cPctDisp  * 5, 100) + '%';
+
+  // Big savings
+  document.getElementById('big-savings').textContent = '$' + Math.round(annualSavings).toLocaleString();
+  document.getElementById('savings-monthly-text').textContent = '($' + Math.round(monthlySavings).toLocaleString() + ' per month)';
+
+  // 5-year projection table
+  let rows = '';
+  for (let yr = 1; yr <= 5; yr++) {
+    const pyY  = pyAnnual * yr;
+    const cY   = cAnnual  * yr;
+    const save = annualSavings * yr;
+    rows += `<tr>
+      <td class="font-semibold">Year ${yr}</td>
+      <td class="text-red-600">${fmt(pyY)}</td>
+      <td class="text-green-600">${fmt(cY)}</td>
+      <td class="font-bold text-green-700">${fmt(save)}</td>
+    </tr>`;
+  }
+  document.getElementById('projectionBody').innerHTML = rows;
+}
+
+// Initial calc
+calculate();
+</script>
+</body>
+</html>
