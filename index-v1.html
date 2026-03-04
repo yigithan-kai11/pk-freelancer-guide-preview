@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pakistan Freelancer Savings Guide — Stop Losing Money | Cenoa</title>
+  <meta name="description" content="Interactive guide for Pakistani freelancers: calculate your hidden losses, register with PSEB, become a tax filer, and save $500-$2,000/year. Step-by-step journey with savings tracker." />
+  <meta name="keywords" content="Pakistani freelancer tax guide, PSEB registration, freelancer savings Pakistan, Payoneer fees Pakistan, 80% repatriation rule, FBR tax filing freelancer" />
+  <meta property="og:title" content="Pakistan Freelancer Savings Guide — How Much Are You Losing?" />
+  <meta property="og:description" content="Most Pakistani freelancers lose $500-$2,000 every year to hidden fees, wrong tax rates, and missed registrations. Find your number and fix it." />
+  <link rel="canonical" href="https://tools.cenoa.com/pk-freelancer-guide/" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NDV9WQ7');</script>
+  <!-- End Google Tag Manager -->
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: {
+        'cenoa-blue': '#0A3DBF',
+        'cenoa-mint': '#88DCC4',
+        'cenoa-dark': '#061E6E',
+      }}}
+    }
+  </script>
+  <link rel="stylesheet" href="../shared.css" />
+  <style>
+    /* Smooth accordion transitions */
+    .accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+    .accordion-body.open {
+      max-height: 12000px;
+      transition: max-height 0.8s ease-in, padding 0.3s ease;
+    }
+
+    /* Better accordion content readability */
+    .accordion-body p,
+    .accordion-body li {
+      line-height: 1.7;
+    }
+    .accordion-body ul {
+      margin-bottom: 1rem;
+    }
+    .accordion-body h4 {
+      margin-top: 1.25rem;
+    }
+    .accordion-body h4:first-child {
+      margin-top: 0;
+    }
+
+    /* Chevron rotation */
+    .accordion-chevron {
+      transition: transform 0.3s ease;
+    }
+    .accordion-chevron.rotate {
+      transform: rotate(180deg);
+    }
+
+    /* Progress bar animation */
+    .progress-fill {
+      transition: width 0.6s ease;
+    }
+
+    /* Savings pulse */
+    @keyframes pulse-savings {
+      0%, 100% { transform: scale(1); }
+      50%      { transform: scale(1.02); }
+    }
+    .savings-pulse { animation: pulse-savings 2s ease-in-out infinite; }
+
+    /* Gauge */
+    .gauge-fill {
+      transition: width 0.5s ease, background-color 0.3s ease;
+    }
+
+    /* Step card hover */
+    .step-header:hover {
+      background: #f0f4ff;
+    }
+
+    /* Body text baseline */
+    .accordion-body .px-5 {
+      padding: 0.75rem 1.5rem 1.75rem 1.5rem;
+    }
+
+    /* Custom checkbox styling */
+    .step-check {
+      width: 22px;
+      height: 22px;
+      accent-color: #0A3DBF;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    /* Slider styling */
+    input[type="range"] {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 8px;
+      border-radius: 4px;
+      background: #e5e7eb;
+      outline: none;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #0A3DBF;
+      cursor: pointer;
+      border: 3px solid #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    input[type="range"]::-moz-range-thumb {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #0A3DBF;
+      cursor: pointer;
+      border: 3px solid #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    /* Data table inside accordions */
+    .content-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+    .content-table th { background: #061E6E; color: #fff; padding: 0.5rem 0.75rem; text-align: left; font-weight: 600; font-size: 0.8rem; }
+    .content-table td { padding: 0.5rem 0.75rem; border-bottom: 1px solid #e5e7eb; color: #1f2937; }
+    .content-table tr:nth-child(even) td { background: #f9fafb; }
+
+    /* Warning box */
+    .warning-box {
+      background: #fef3c7;
+      border: 1px solid #fbbf24;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-size: 0.85rem;
+      color: #92400e;
+    }
+
+    /* Info box */
+    .info-box {
+      background: #eff6ff;
+      border: 1px solid #93c5fd;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-size: 0.85rem;
+      color: #1e40af;
+    }
+
+    /* Sticky progress bar */
+    #progressBar {
+      position: sticky;
+      top: 52px;
+      z-index: 90;
+      transition: box-shadow 0.3s ease;
+    }
+
+    /* Results panel animation */
+    #resultsPanel {
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    #resultsPanel.hidden {
+      opacity: 0;
+      transform: translateY(20px);
+      pointer-events: none;
+      max-height: 0;
+      overflow: hidden;
+    }
+    #resultsPanel.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+      max-height: none;
+    }
+
+    /* Scrollbar for tables on mobile */
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+    /* Print hide */
+    @media print {
+      #progressBar, .cenoa-header, .footer-cta { display: none !important; }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NDV9WQ7"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- ===== HEADER ===== -->
+<header class="cenoa-header">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+    <a href="https://cenoa-nextjs-pearl.vercel.app/" class="flex items-center gap-2">
+      <span class="text-2xl font-extrabold text-cenoa-dark tracking-tight">Cenoa</span>
+    </a>
+    <a href="https://onelink.ext.cenoa.com/K9pU/cenoacomstart" class="cta-btn">Open Free Account</a>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero-gradient text-white py-12 md:py-16 px-4">
+  <div class="max-w-3xl mx-auto text-center">
+    <p class="text-white font-semibold text-sm uppercase tracking-widest mb-2" style="color: #a8edda;">🇵🇰 Pakistan Freelancer Guide</p>
+    <h1 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">How Much Money Are You<br>Leaving on the Table?</h1>
+    <p class="text-white text-lg md:text-xl max-w-2xl mx-auto">Most Pakistani freelancers lose <strong class="text-cenoa-mint">$500–$2,000 every year</strong> to hidden fees, wrong tax rates, and missed registrations. Let's find your number.</p>
+  </div>
+</section>
+
+<!-- ===== SECTION 1: SAVINGS CALCULATOR ===== -->
+<main class="max-w-5xl mx-auto px-4 py-10">
+
+  <!-- Calculator Inputs -->
+  <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 mb-6" id="calculatorSection">
+    <h2 class="font-bold text-xl text-cenoa-dark mb-2">💰 Your Savings Calculator</h2>
+    <p class="text-gray-600 text-sm mb-6">Answer 4 questions and see your personalized savings report.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Monthly income -->
+      <div class="md:col-span-2">
+        <label class="calc-label" for="monthlyIncome">Monthly Income (USD)</label>
+        <div class="flex items-center gap-4">
+          <div class="relative flex-1">
+            <span class="input-prefix font-bold">$</span>
+            <input type="number" id="monthlyIncome" class="calc-input pl-8" min="100" max="20000" step="100" value="1500" oninput="syncSlider()" />
+          </div>
+          <span class="text-sm text-gray-600 font-medium whitespace-nowrap" id="annualDisplay">$18,000/yr</span>
+        </div>
+        <input type="range" id="incomeSlider" min="100" max="20000" step="100" value="1500" class="mt-3" oninput="syncInput()" />
+        <div class="flex justify-between text-xs text-gray-600 mt-1">
+          <span>$100</span>
+          <span>$5,000</span>
+          <span>$10,000</span>
+          <span>$20,000</span>
+        </div>
+      </div>
+
+      <!-- Payment method -->
+      <div>
+        <label class="calc-label" for="paymentMethod">How do you receive payments?</label>
+        <select id="paymentMethod" class="calc-select">
+          <option value="payoneer" selected>Payoneer</option>
+          <option value="wise">Wise</option>
+          <option value="wire">Direct bank wire</option>
+          <option value="other">Other / Mixed</option>
+        </select>
+      </div>
+
+      <!-- PSEB status -->
+      <div>
+        <label class="calc-label" for="psebStatus">Registered with PSEB (Tech Destination)?</label>
+        <select id="psebStatus" class="calc-select">
+          <option value="no">No</option>
+          <option value="yes">Yes</option>
+          <option value="unknown" selected>What's that?</option>
+        </select>
+      </div>
+
+      <!-- Filer status -->
+      <div class="md:col-span-2">
+        <label class="calc-label" for="filerStatus">Do you file income tax returns?</label>
+        <select id="filerStatus" class="calc-select md:w-1/2">
+          <option value="no">No</option>
+          <option value="yes">Yes</option>
+          <option value="unsure" selected>Not sure</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Tax warning -->
+    <div class="warning-box mt-6">
+      ⚠️ <strong>Tax credit status under Section 65F may vary</strong> — verify for current fiscal year before filing. The rates shown here use the standard withholding rates (1% without PSEB, 0.25% with PSEB).
+    </div>
+
+    <!-- Calculate Button -->
+    <button onclick="calculateSavings()" class="calc-btn mt-6">
+      Calculate My Savings →
+    </button>
+  </div>
+
+  <!-- Results Panel (hidden initially) -->
+  <div id="resultsPanel" class="hidden">
+    <!-- Results heading -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 mb-6">
+      <h3 class="font-bold text-xl text-cenoa-dark mb-1">📊 Your Annual Savings Report</h3>
+      <p class="text-gray-700 text-sm mb-4">Annual income: <strong id="resultAnnualIncome">$18,000/year</strong></p>
+
+      <!-- Comparison Table -->
+      <div class="table-scroll">
+        <table class="content-table w-full">
+          <thead>
+            <tr>
+              <th class="rounded-tl-lg"></th>
+              <th>Your Current Situation</th>
+              <th>After Completing the Journey</th>
+              <th class="rounded-tr-lg">You Save</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="font-semibold text-gray-700">Platform fees</td>
+              <td class="text-red-600 font-semibold" id="r-currentPlatform">—</td>
+              <td class="text-green-600 font-semibold" id="r-optimizedPlatform">—</td>
+              <td class="text-green-700 font-bold" id="r-savePlatform">—</td>
+            </tr>
+            <tr>
+              <td class="font-semibold text-gray-700">Tax rate</td>
+              <td class="text-red-600 font-semibold" id="r-currentTax">—</td>
+              <td class="text-green-600 font-semibold" id="r-optimizedTax">—</td>
+              <td class="text-green-700 font-bold" id="r-saveTax">—</td>
+            </tr>
+            <tr>
+              <td class="font-semibold text-gray-700">Non-filer costs</td>
+              <td class="text-red-600 font-semibold" id="r-currentNonFiler">—</td>
+              <td class="text-green-600 font-semibold" id="r-optimizedNonFiler">$0</td>
+              <td class="text-green-700 font-bold" id="r-saveNonFiler">—</td>
+            </tr>
+            <tr>
+              <td class="font-semibold text-gray-700">80% rule risk</td>
+              <td class="text-amber-600 font-semibold" id="r-current80">⚠️ Unknown</td>
+              <td class="text-green-600 font-semibold">✅ Protected</td>
+              <td class="text-green-700 font-bold">Peace of mind</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="font-bold text-cenoa-dark text-base">TOTAL</td>
+              <td class="text-red-600 font-bold text-base" id="r-totalCurrent">—</td>
+              <td class="text-green-600 font-bold text-base" id="r-totalOptimized">—</td>
+              <td class="text-green-700 font-extrabold text-base" id="r-totalSave">—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Big Savings Banner -->
+    <div class="savings-pulse bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl p-6 md:p-8 text-white text-center mb-6 shadow-lg">
+      <p class="text-green-100 font-semibold uppercase text-sm tracking-widest mb-2">Your estimated annual savings</p>
+      <div class="text-5xl md:text-6xl font-extrabold mb-2" id="bigSavings">$0</div>
+      <p class="text-green-100 text-lg" id="monthlySavingsText">That's $0 extra in your pocket every month</p>
+      <div class="mt-4">
+        <a href="#journeySection" class="inline-block bg-white text-green-700 font-bold px-8 py-3 rounded-xl hover:bg-green-50 transition-colors text-lg" onclick="scrollToJourney()">
+          Start the Journey ↓
+        </a>
+      </div>
+    </div>
+
+    <!-- Detailed breakdown -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-6">
+      <h4 class="font-bold text-cenoa-dark mb-3">📋 Detailed Breakdown</h4>
+      <div class="space-y-3 text-sm" id="detailedBreakdown">
+        <!-- Filled by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 2: THE JOURNEY — 6 STEPS ===== -->
+  <div id="journeySection" class="mb-8">
+    <div class="text-center mb-8">
+      <h2 class="text-2xl md:text-3xl font-extrabold text-cenoa-dark mb-2">Your 6-Step Savings Journey</h2>
+      <p class="text-gray-700 max-w-2xl mx-auto">Complete each step to unlock your full savings potential. Check off steps as you go — your progress is saved automatically.</p>
+    </div>
+
+    <!-- ===== STICKY PROGRESS BAR ===== -->
+    <div id="progressBar" class="bg-white border-b border-gray-200 shadow-sm py-3 px-4 rounded-xl mb-6">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-sm font-bold text-cenoa-dark" id="progressLabel">Step 0 of 6</span>
+          <span class="text-xs text-gray-700 font-medium" id="progressSavings">Savings unlocked: $0/yr</span>
+        </div>
+        <div class="bg-gray-200 rounded-full h-3 overflow-hidden">
+          <div id="progressFill" class="progress-fill h-full rounded-full bg-gradient-to-r from-cenoa-blue to-cenoa-mint" style="width: 0%"></div>
+        </div>
+        <div class="flex justify-between mt-1">
+          <span class="text-xs text-green-600 font-semibold" id="unlockedText">✅ $0/yr unlocked</span>
+          <span class="text-xs text-gray-600" id="remainingText">🔓 $0/yr remaining</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== STEP 1: Become a Tax Filer ===== -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 mb-4 overflow-hidden" id="step1-card">
+      <div class="step-header flex items-center gap-4 p-5 cursor-pointer select-none transition-colors" onclick="toggleAccordion(1)">
+        <input type="checkbox" class="step-check" id="check1" onclick="event.stopPropagation(); toggleStep(1)" />
+        <div class="flex-1">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="bg-cenoa-blue text-white text-xs font-bold px-2.5 py-1 rounded-full">Step 1</span>
+            <span class="font-bold text-cenoa-dark text-lg">Become a Tax Filer</span>
+          </div>
+          <p class="text-gray-800 text-[15px] leading-relaxed mt-1">Unlocks: Reduced rates on everything in life · <span class="text-green-600 font-semibold" id="step1-savings">$100–525/yr saved</span></p>
+        </div>
+        <svg class="accordion-chevron w-6 h-6 text-gray-500 flex-shrink-0" id="chevron1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="accordion-body" id="body1">
+        <div class="px-5 pb-6 pt-2 border-t border-gray-100">
+          <!-- Why -->
+          <h4 class="font-bold text-cenoa-dark mb-2 text-base">Why This Matters</h4>
+          <p class="text-gray-800 text-[15px] leading-relaxed mb-3">Being a non-filer in Pakistan doesn't just mean you don't file taxes. It means you <strong>pay MORE</strong> on practically everything:</p>
+          <ul class="text-[15px] text-gray-800 leading-relaxed space-y-1.5 mb-4 ml-4">
+            <li>• <strong>Property purchase tax:</strong> 10% instead of 3%</li>
+            <li>• <strong>Vehicle registration:</strong> 2–3 times higher</li>
+            <li>• <strong>Cash withdrawal tax:</strong> double (0.6% vs 0.3%)</li>
+            <li>• <strong>Bank savings tax:</strong> 35% instead of 15%</li>
+            <li>• <strong>Airport departure:</strong> PKR 30,000 instead of 15,000</li>
+            <li>• Your <strong>SIM card can be blocked</strong></li>
+            <li>• You <strong>can't buy property</strong> above PKR 5 million</li>
+            <li>• You <strong>can't buy vehicles</strong> above PKR 7 million</li>
+          </ul>
+
+          <!-- How -->
+          <h4 class="font-bold text-cenoa-dark mb-2 text-base">How to Do It (Step-by-Step)</h4>
+          <div class="space-y-4 text-[15px] text-gray-800 leading-relaxed">
+            <div>
+              <p class="font-semibold text-gray-800 mb-1">1. Get your NTN (National Tax Number)</p>
+              <ul class="ml-4 space-y-1">
+                <li>• Go to FBR IRIS portal: <a href="https://iris.fbr.gov.pk" target="_blank" rel="noopener" class="text-cenoa-blue underline hover:text-cenoa-dark">iris.fbr.gov.pk</a></li>
+                <li>• Your NTN = your CNIC number (national ID number)</li>
+                <li>• Register with your CNIC + mobile number</li>
+                <li>• Complete registration form with income details</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-semibold text-gray-800 mb-1">2. File your income tax return</p>
+              <ul class="ml-4 space-y-1">
+                <li>• Log into IRIS portal</li>
+                <li>• Select "Income Tax Return" for current tax year</li>
+                <li>• Declare all income (export + local)</li>
+                <li>• File Wealth Statement (required even if income is low)</li>
+                <li>• Deadline: September 30 each year (subject to extensions)</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-semibold text-gray-800 mb-1">3. Verify your Active Taxpayer status</p>
+              <ul class="ml-4 space-y-1">
+                <li>• Check ATL: <a href="https://e.fbr.gov.pk/esbn/Loging.aspx" target="_blank" rel="noopener" class="text-cenoa-blue underline hover:text-cenoa-dark">e.fbr.gov.pk/esbn/Loging.aspx</a></li>
+                <li>• Enter your CNIC → should show "Active"</li>
+                <li>• ATL is updated on October 1 each year</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="flex gap-4 mt-4 text-xs text-gray-600 font-medium">
+            <span>⏱ Time: ~1–2 hours online</span>
+            <span>💰 Cost: Free</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== STEP 2: Open a Freelancer Bank Account ===== -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 mb-4 overflow-hidden" id="step2-card">
+      <div class="step-header flex items-center gap-4 p-5 cursor-pointer select-none transition-colors" onclick="toggleAccordion(2)">
+        <input type="checkbox" class="step-check" id="check2" onclick="event.stopPropagation(); toggleStep(2)" />
+        <div class="flex-1">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="bg-cenoa-blue text-white text-xs font-bold px-2.5 py-1 rounded-full">Step 2</span>
+            <span class="font-bold text-cenoa-dark text-lg">Open a Freelancer Bank Account</span>
+          </div>
+          <p class="text-gray-800 text-[15px] leading-relaxed mt-1">Unlocks: USD retention + correct bank certificates · <span class="text-green-600 font-semibold">Foundation for everything</span></p>
+        </div>
+        <svg class="accordion-chevron w-6 h-6 text-gray-500 flex-shrink-0" id="chevron2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="accordion-body" id="body2">
+        <div class="px-5 pb-6 pt-2 border-t border-gray-100">
+          <h4 class="font-bold text-cenoa-dark mb-2 text-base">Why You Need This</h4>
+          <p class="text-gray-800 text-[15px] leading-relaxed mb-3">Most Pakistani freelancers use their regular bank account (or JazzCash/NayaPay). A <strong>"Freelancer Account"</strong> is a special account type that:</p>
+          <ul class="text-[15px] text-gray-800 leading-relaxed space-y-1.5 mb-4 ml-4">
+            <li>• Comes with a linked <strong>USD account (ESFCA)</strong> where you can keep dollars</li>
+            <li>• Automatically processes foreign remittances correctly</li>
+            <li>• Issues <strong>PRCs</strong> (bank certificates) that you need for tax benefits</li>
+            <li>• Lets you pay for tools and subscriptions directly in USD</li>
+          </ul>
+
+          <div class="info-box mb-4">
+            <strong>💡 What is ESFCA?</strong><br>
+            Exporters' Special Foreign Currency Account. The government lets you keep up to <strong>$5,000/month or 50% of your earnings</strong> (whichever is higher) in USD inside Pakistan. You get a debit card that works for international online payments. No more blocked Canva or ChatGPT subscriptions.
+          </div>
+
+          <h4 class="font-bold text-cenoa-dark mb-2 text-base">How to Open One</h4>
+          <div class="space-y-4 text-[15px] text-gray-800 leading-relaxed">
+            <div>
+              <p class="font-semibold text-gray-800 mb-1">1. Choose a bank — best options for freelancers:</p>
+              <ul class="ml-4 space-y-1">
+                <li>• <strong>Meezan Bank</strong> — Payoneer partnership, auto e-PRC, Islamic banking</li>
+                <li>• <strong>UBL</strong> — Online account opening, good freelancer support</li>
+                <li>• <strong>Allied Bank</strong> — Online/app opening, straightforward process</li>
+                <li>• <strong>Faysal Bank</strong> — Competitive FX rates</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-semibold text-gray-800 mb-1">2. Open the account</p>
+              <ul class="ml-4 space-y-1">
+                <li>• <strong>Online:</strong> UBL, Allied Bank allow digital opening via app</li>
+                <li>• <strong>Branch:</strong> Meezan requires branch visit but has best Payoneer integration</li>
+                <li>• You'll get <strong>TWO accounts:</strong> PKR account + linked ESFCA (USD/EUR/GBP)</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-semibold text-gray-800 mb-1">3. Documents needed</p>
+              <ul class="ml-4 space-y-1">
+                <li>• CNIC</li>
+                <li>• Proof of freelance income (Payoneer/Upwork statements)</li>
+                <li>• PSEB certificate (helpful but usually not required just to open)</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-semibold text-gray-800 mb-1">4. Set your USD retention percentage</p>
+              <ul class="ml-4 space-y-1">
+                <li>• Tell the bank how much of each remittance to keep in USD</li>
+                <li>• Rest is auto-converted to PKR at bank's rate</li>
+                <li>• You can change this by visiting the branch</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="flex gap-4 mt-4 text-xs text-gray-600 font-medium">
+            <span>⏱ Time: 1–3 days</span>
+            <span>💰 Cost: Free (most banks)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== STEP 3: Fix Your Payment Method ===== -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 mb-4 overflow-hidden" id="step3-card">
+      <div class="step-header flex items-center gap-4 p-5 cursor-pointer select-none transition-colors" onclick="toggleAccordion(3)">
+        <input type="checkbox" class="step-check" id="check3" onclick="event.stopPropagation(); toggleStep(3)" />
+        <div class="flex-1">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="bg-cenoa-blue text-white text-xs font-bold px-2.5 py-1 rounded-full">Step 3</span>
+            <span class="font-bold text-cenoa-dark text-lg">Fix Your Payment Method</span>
+          </div>
+          <p class="text-gray-800 text-[15px] leading-relaxed mt-1">Unlocks: $600+/yr in fee savings · <span class="text-green-600 font-semibold" id="step3-savings">Platform fee reduction</span></p>
+        </div>
+        <svg class="accordion-chevron w-6 h-6 text-gray-500 flex-shrink-0" id="chevron3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="accordion-body" id="body3">
+        <div class="px-5 pb-6 pt-2 border-t border-gray-100">
+          <h4 class="font-bold text-cenoa-dark mb-2 text-base">The Problem with Payoneer</h4>
+          <p class="text-gray-800 text-[15px] leading-relaxed mb-3">When you withdraw $1,000 from Payoneer to your Pakistani bank, you don't receive $1,000 worth of PKR. Payoneer takes:</p>
+          <ul class="text-[15px] text-gray-800 leading-relaxed space-y-1.5 mb-3 ml-4">
+            <li>• <strong>~1% receiving fee</strong> when your client pays you: <span class="text-red-600">-$10</span></li>
+            <li>• <strong>~2.5% hidden in the exchange rate</strong> when you withdraw: <span class="text-red-600">-$25</span></li>
+            <li>• <strong>You receive ~$965</strong> worth of PKR out of $1,000</li>
+          </ul>
+          <p class="text-sm text-red-600 font-semibold mb-4">Over a year at $2,000/month: that's $840 gone.</p>
+
+          <div class="info-box mb-4">
+            <strong>💡 How Payoneer's "hidden fee" works:</strong><br>
+            Payoneer shows you an exchange rate when you withdraw. But this rate is NOT the real market rate (what you'd see on Google). It's typically 2–3% worse. This difference is their profit — and they don't show it as a "fee."
+          </div>
+
+          <h4 class="font-bold text-cenoa-dark mb-2 text-base">Payment Method Comparison (at $24,000/year)</h4>
+          <div class="table-scroll mb-4">
+            <table class="content-table">
+              <thead>
+                <tr>
+                  <th>Method</th>
+                  <th>Annual Cost</th>
+                  <th>Bank code (PRC) correct?</th>
+                  <th>Counts for 80% rule?</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-semibold">Payoneer → Regular bank</td>
+                  <td class="text-red-600">~$840</td>
+                  <td>❌ Usually wrong code — you must visit bank to fix</td>
+                  <td>⚠️ Counts, but proving it is harder</td>
+                </tr>
+                <tr>
+                  <td class="font-semibold">Payoneer → Meezan Freelancer</td>
+                  <td class="text-red-600">~$840</td>
+                  <td>✅ Auto e-PRC (Meezan-Payoneer partnership)</td>
+                  <td>✅ Counts</td>
+                </tr>
+                <tr>
+                  <td class="font-semibold">Wise → Pakistani bank</td>
+                  <td class="text-amber-600">~$360</td>
+                  <td>❌ Shows as local transfer — bank can't easily fix</td>
+                  <td>❌ May not count</td>
+                </tr>
+                <tr>
+                  <td class="font-semibold">Direct wire</td>
+                  <td class="text-amber-600">~$600</td>
+                  <td>✅ Correct automatically (comes as foreign remittance)</td>
+                  <td>✅ Counts</td>
+                </tr>
+                <tr class="bg-green-50">
+                  <td class="font-bold text-cenoa-dark">Cenoa</td>
+                  <td class="text-green-600 font-bold">~$238</td>
+                  <td>❓ Check with Cenoa support</td>
+                  <td>❓ Check with Cenoa support</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="warning-box mb-4">
+            <strong>⚠️ Note on Cenoa PRC status:</strong> We're confirming how Cenoa routes payments to Pakistan. If it arrives through international banking channels (SWIFT), your bank will automatically recognize it as foreign income and issue a correct PRC. If it routes through a local partner (like Wise does), the same code problem may apply. Ask Cenoa support before switching.
+          </div>
+
+          <p class="text-[15px] text-gray-800 leading-relaxed mb-4"><strong>Recommendation:</strong> If you're on Payoneer, at minimum switch to a <strong>Meezan Freelancer Account</strong> for the auto e-PRC. For lower fees, consider Cenoa (0.99% vs ~3.5%).</p>
+
+          <a href="https://onelink.ext.cenoa.com/K9pU/cenoacomstart" class="inline-block bg-cenoa-blue text-white font-bold px-6 py-2.5 rounded-lg hover:bg-cenoa-dark transition-colors text-sm">
+            Open Free Cenoa Account →
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== STEP 4: Register with PSEB ===== -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 mb-4 overflow-hidden" id="step4-card">
+      <div class="step-header flex items-center gap-4 p-5 cursor-pointer select-none transition-colors" onclick="toggleAccordion(4)">
+        <input type="checkbox" class="step-check" id="check4" onclick="event.stopPropagation(); toggleStep(4)" />
+        <div class="flex-1">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="bg-cenoa-blue text-white text-xs font-bold px-2.5 py-1 rounded-full">Step 4</span>
+            <span class="font-bold text-cenoa-dark text-lg">Register with PSEB (Tech Destination)</span>
+          </div>
+          <p class="text-gray-800 text-[15px] leading-relaxed mt-1">Unlocks: Tax drops from 1% → 0.25% · <span class="text-green-600 font-semibold" id="step4-savings">$180/yr on $24K income</span></p>
+        </div>
+        <svg class="accordion-chevron w-6 h-6 text-gray-500 flex-shrink-0" id="chevron4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="accordion-body" id="body4">
+        <div class="px-5 pb-6 pt-2 border-t border-gray-100">
+          <h4 class="font-bold text-cenoa-dark mb-2 text-base">What It Is</h4>
+          <p class="text-gray-800 text-[15px] leading-relaxed mb-3">PSEB (Pakistan Software Export Board), now called <strong>Tech Destination</strong>, is the government's official registry for IT freelancers and exporters. Think of it as getting your "freelancer license."</p>
+
+          <h4 class="font-bold text-cenoa-dark mb-2 text-base">What It Gets You</h4>
+          <ul class="text-[15px] text-gray-800 leading-relaxed space-y-1.5 mb-4 ml-4">
+            <li>• <strong>Tax rate drops from 1% to 0.25%</strong> (that's 4x less)</li>
+            <li>• Government recognition of your work</li>
+            <li>• Access to training, grants, and international programs</li>
+            <li>• Professional credibility</li>
+          </ul>
+
+          <div class="info-box mb-4">
+            <strong>💡 Important:</strong> You do <strong>NOT</strong> need PRCs (bank certificates) to register for the first time. You only need basic documents. This is a common misconception that stops people from starting. The correct order is: <strong>register first → get your PSEB certificate → THEN show it to your bank → bank starts giving you correct PRCs going forward.</strong>
+          </div>
+
+          <h4 class="font-bold text-cenoa-dark mb-2 text-base">What You Need to Register (First Time)</h4>
+          <ul class="text-[15px] text-gray-800 leading-relaxed space-y-1.5 mb-4 ml-4">
+            <li>✅ NTN / tax registration (Step 1)</li>
+            <li>✅ Bank account (Step 2)</li>
+            <li>✅ Account Maintenance Certificate (download from bank app)</li>
+            <li>✅ CNIC (you already have this)</li>
+            <li>✅ Links to your freelance profiles (Upwork, Fiverr, LinkedIn)</li>
+            <li>❌ PRCs — <strong>NOT needed</strong> for first-time registration</li>
+          </ul>
+
+          <h4 class="font-bold text-cenoa-dark mb-2 text-base">How to Register</h4>
+          <div class="space-y-3 text-[15px] text-gray-800 leading-relaxed mb-4">
+            <ol class="list-decimal ml-5 space-y-2">
+              <li>Go to <a href="https://portal.techdestination.com" target="_blank" rel="noopener" class="text-cenoa-blue underline hover:text-cenoa-dark">portal.techdestination.com</a></li>
+              <li>Click "Freelancer" → Create account</li>
+              <li>Fill in your details: skills, platforms, income info</li>
+              <li>Upload documents:
+                <ul class="ml-4 mt-1 space-y-0.5 list-disc">
+                  <li>CNIC (both sides)</li>
+                  <li>NTN certificate (download from FBR IRIS)</li>
+                  <li>Account Maintenance Certificate (from bank app)</li>
+                </ul>
+              </li>
+              <li>Submit → PSEB reviews (1–2 business days)</li>
+              <li>Once pre-approved, pay fee via 1Bill on your banking app</li>
+              <li>Certificate issued digitally (1–2 days)</li>
+            </ol>
+          </div>
+
+          <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-4">
+            <h5 class="font-bold text-green-800 text-sm mb-1">✅ After You Get the Certificate — Take It to Your Bank Immediately</h5>
+            <ul class="text-sm text-green-800 space-y-1 ml-4">
+              <li>• Email bank support + CC your branch manager</li>
+              <li>• Attach your PSEB certificate</li>
+              <li>• Ask them to update your profile for <strong>0.25% withholding under code 9186</strong></li>
+              <li>• From this point on, your bank should issue correct PRCs automatically (or at least upon request with no argument)</li>
+            </ul>
+          </div>
+
+          <h4 class="font-bold text-cenoa-dark mb-2 text-base">Annual Renewal</h4>
+          <ul class="text-[15px] text-gray-800 leading-relaxed space-y-1.5 mb-4 ml-4">
+            <li>• PSEB registration is valid for <strong>1 year</strong></li>
+            <li>• Renewal previously required PRCs with correct code 9186 (which you'll now have, since your bank was updated after initial registration)</li>
+            <li>• As of late 2025, PSEB may have simplified renewal requirements — confirm on the portal</li>
+            <li>• If you somehow can't get correct PRCs for first renewal, you can submit an affidavit (accepted only once)</li>
+            <li>• <strong>Set a calendar reminder 30 days before expiry</strong></li>
+          </ul>
+
+          <div class="warning-box mb-4">
+            ⚠️ <strong>Tax credit status under Section 65F may vary</strong> — verify for current fiscal year before filing. The 0.25% rate shown here is the standard PSEB withholding rate.
+          </div>
+
+          <div class="flex gap-4 mt-4 text-xs text-gray-600 font-medium">
+            <span>⏱ Time: 1–2 hours to apply, 2–5 days for certificate</span>
+            <span>💰 Cost: ~PKR 1,000 (~$3.50) first time | ~PKR 5,000 (~$17.50) renewal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== STEP 5: Set Up Proper Invoicing ===== -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 mb-4 overflow-hidden" id="step5-card">
+      <div class="step-header flex items-center gap-4 p-5 cursor-pointer select-none transition-colors" onclick="toggleAccordion(5)">
+        <input type="checkbox" class="step-check" id="check5" onclick="event.stopPropagation(); toggleStep(5)" />
+        <div class="flex-1">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="bg-cenoa-blue text-white text-xs font-bold px-2.5 py-1 rounded-full">Step 5</span>
+            <span class="font-bold text-cenoa-dark text-lg">Set Up Proper Invoicing</span>
+          </div>
+          <p class="text-gray-800 text-[15px] leading-relaxed mt-1">Unlocks: Audit protection + easier PRC issuance · <span class="text-green-600 font-semibold">Prevents future problems</span></p>
+        </div>
+        <svg class="accordion-chevron w-6 h-6 text-gray-500 flex-shrink-0" id="chevron5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="accordion-body" id="body5">
+        <div class="px-5 pb-6 pt-2 border-t border-gray-100">
+          <h4 class="font-bold text-cenoa-dark mb-2 text-base">Why Invoicing Matters</h4>
+          <p class="text-gray-800 text-[15px] leading-relaxed mb-3">If FBR audits you, they'll ask for invoices. If your bank asks why you're receiving $3,000 from abroad, they'll ask for invoices. If you want your PRC to have the correct code (9186), having proper invoices makes it much easier.</p>
+
+          <h4 class="font-bold text-cenoa-dark mb-2 text-base">What Your Invoices Need</h4>
+
+          <div class="space-y-4 text-[15px] text-gray-800 leading-relaxed mb-4">
+            <div>
+              <p class="font-semibold text-gray-800 mb-1">For your international client:</p>
+              <ul class="ml-4 space-y-1">
+                <li>• Invoice number (sequential: INV-001, INV-002...)</li>
+                <li>• Your full name and address</li>
+                <li>• Client's name, company, country</li>
+                <li>• Description of services (be specific: "Web development services" not "work")</li>
+                <li>• Amount in USD</li>
+                <li>• Payment terms (Net 15, Net 30, etc.)</li>
+                <li>• Your payment details (Payoneer email, bank IBAN, or Cenoa details)</li>
+              </ul>
+            </div>
+
+            <div>
+              <p class="font-semibold text-gray-800 mb-1">For your Pakistani bank (helps get correct PRC):</p>
+              <ul class="ml-4 space-y-1">
+                <li>• Service type clearly indicating IT/ITeS work</li>
+                <li>• Mention that this is <strong>"export of IT services"</strong> somewhere on the invoice</li>
+              </ul>
+            </div>
+
+            <div>
+              <p class="font-semibold text-gray-800 mb-1">For FBR (required if audited):</p>
+              <ul class="ml-4 space-y-1">
+                <li>• PKR equivalent amount (at the exchange rate on invoice date)</li>
+                <li>• Your NTN number</li>
+                <li>• Date of service delivery</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <strong>💡 Pro tip:</strong> Create one invoice template with all three requirements built in. Use it for every payment. Keep copies organized by month.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== STEP 6: Track Your 80% Repatriation ===== -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 mb-4 overflow-hidden" id="step6-card">
+      <div class="step-header flex items-center gap-4 p-5 cursor-pointer select-none transition-colors" onclick="toggleAccordion(6)">
+        <input type="checkbox" class="step-check" id="check6" onclick="event.stopPropagation(); toggleStep(6)" />
+        <div class="flex-1">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="bg-cenoa-blue text-white text-xs font-bold px-2.5 py-1 rounded-full">Step 6</span>
+            <span class="font-bold text-cenoa-dark text-lg">Track Your 80% Repatriation</span>
+          </div>
+          <p class="text-gray-800 text-[15px] leading-relaxed mt-1">Unlocks: Protection from 45% tax reclassification · <span class="text-red-600 font-semibold">Prevents catastrophic tax reassessment</span></p>
+        </div>
+        <svg class="accordion-chevron w-6 h-6 text-gray-500 flex-shrink-0" id="chevron6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="accordion-body" id="body6">
+        <div class="px-5 pb-6 pt-2 border-t border-gray-100">
+          <h4 class="font-bold text-cenoa-dark mb-2 text-base">The Rule</h4>
+          <p class="text-gray-800 text-[15px] leading-relaxed mb-3">At least <strong>80% of your foreign export earnings</strong> must enter Pakistan through official banking channels each fiscal year (July 1 – June 30).</p>
+
+          <h4 class="font-bold text-cenoa-dark mb-2 text-base">What Counts as "Repatriated"</h4>
+          <ul class="text-[15px] text-gray-800 leading-relaxed space-y-1.5 mb-4 ml-4">
+            <li>✅ Payoneer withdrawal to Pakistani bank</li>
+            <li>✅ Wire transfer to Pakistani bank</li>
+            <li>✅ Money in your ESFCA (foreign currency account in Pakistan)</li>
+            <li>❌ Money sitting in Payoneer balance</li>
+            <li>❌ Money spent directly from Payoneer card (outside Pakistan)</li>
+            <li>❌ Money kept in Wise balance</li>
+            <li>⚠️ Wise transfer to Pakistani bank (may not be classified correctly)</li>
+          </ul>
+
+          <div class="warning-box mb-4">
+            <strong>⚠️ What happens if you fail:</strong> Your entire income gets reclassified from "IT export" to "regular business income." Tax goes from 0.25% to progressive rates up to <strong>45%</strong>. The government can apply this retroactively.
+          </div>
+
+          <!-- Interactive 80% Repatriation Tracker -->
+          <div class="bg-gray-50 border border-gray-200 rounded-xl p-5 mt-4">
+            <h4 class="font-bold text-cenoa-dark mb-1 text-base">📊 Your 80% Repatriation Tracker</h4>
+            <p class="text-xs text-gray-600 mb-4">Fiscal year: July 1 – June 30 · Data stored locally on your device only.</p>
+
+            <div class="space-y-4">
+              <div>
+                <label class="calc-label" for="repTotal">Total earned from foreign clients this fiscal year ($)</label>
+                <div class="relative">
+                  <span class="input-prefix font-bold">$</span>
+                  <input type="number" id="repTotal" class="calc-input pl-8" placeholder="0" min="0" step="100" value="" oninput="calculateRepatriation()" />
+                </div>
+              </div>
+              <div>
+                <label class="calc-label" for="repBank">Total withdrawn/transferred to Pakistani bank ($)</label>
+                <div class="relative">
+                  <span class="input-prefix font-bold">$</span>
+                  <input type="number" id="repBank" class="calc-input pl-8" placeholder="0" min="0" step="100" value="" oninput="calculateRepatriation()" />
+                </div>
+              </div>
+              <div>
+                <label class="calc-label" for="repESFCA">Currently in ESFCA ($)</label>
+                <div class="relative">
+                  <span class="input-prefix font-bold">$</span>
+                  <input type="number" id="repESFCA" class="calc-input pl-8" placeholder="0" min="0" step="100" value="" oninput="calculateRepatriation()" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Results -->
+            <div class="mt-5 p-4 bg-white rounded-lg border border-gray-200">
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-sm font-semibold text-gray-700">Total Repatriated:</span>
+                <span class="text-lg font-bold text-cenoa-dark" id="repRepatriated">$0</span>
+              </div>
+              <div class="flex justify-between items-center mb-3">
+                <span class="text-sm font-semibold text-gray-700">Repatriation Percentage:</span>
+                <span class="text-2xl font-extrabold" id="repPercentage" style="color: #6b7280;">0%</span>
+              </div>
+
+              <!-- Visual Gauge -->
+              <div class="mb-3">
+                <div class="bg-gray-200 rounded-full h-6 overflow-hidden relative">
+                  <div id="repGauge" class="gauge-fill h-full rounded-full" style="width: 0%; background-color: #ef4444;"></div>
+                  <!-- 80% marker -->
+                  <div class="absolute top-0 h-full border-l-2 border-dashed border-gray-600" style="left: 80%;">
+                    <span class="absolute -top-5 -left-3 text-xs text-gray-600 font-bold">80%</span>
+                  </div>
+                </div>
+                <div class="flex justify-between mt-1 text-xs text-gray-600">
+                  <span>0%</span>
+                  <span class="text-red-500 font-semibold">← Danger zone</span>
+                  <span>80%</span>
+                  <span class="text-green-500 font-semibold">Safe →</span>
+                  <span>100%</span>
+                </div>
+              </div>
+
+              <!-- Status message -->
+              <div id="repMessage" class="text-sm font-semibold p-3 rounded-lg bg-gray-100 text-gray-600 text-center">
+                Enter your amounts above to track your repatriation status.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 3: COMPLETION SUMMARY ===== -->
+  <div id="completionSection" class="mb-8" style="display: none;">
+    <div class="bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-300 rounded-2xl p-6 md:p-8 text-center">
+      <div class="text-5xl mb-4">🎉</div>
+      <h2 class="text-2xl md:text-3xl font-extrabold text-cenoa-dark mb-3">Journey Complete!</h2>
+      <p class="text-gray-800 text-lg mb-6" id="completionSavingsText">You've optimized your freelancing finances.</p>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3 max-w-2xl mx-auto mb-6 text-left">
+        <div class="bg-white rounded-xl p-3 border border-green-200">
+          <div class="text-green-600 text-lg mb-1">✅</div>
+          <div class="text-sm font-bold text-gray-800">Tax Filer</div>
+          <div class="text-xs text-gray-600">Lower costs on everything</div>
+        </div>
+        <div class="bg-white rounded-xl p-3 border border-green-200">
+          <div class="text-green-600 text-lg mb-1">✅</div>
+          <div class="text-sm font-bold text-gray-800">Properly Banked</div>
+          <div class="text-xs text-gray-600">With USD retention</div>
+        </div>
+        <div class="bg-white rounded-xl p-3 border border-green-200">
+          <div class="text-green-600 text-lg mb-1">✅</div>
+          <div class="text-sm font-bold text-gray-800">Lower Fees</div>
+          <div class="text-xs text-gray-600">Paying less on transfers</div>
+        </div>
+        <div class="bg-white rounded-xl p-3 border border-green-200">
+          <div class="text-green-600 text-lg mb-1">✅</div>
+          <div class="text-sm font-bold text-gray-800">PSEB Registered</div>
+          <div class="text-xs text-gray-600">0.25% tax rate</div>
+        </div>
+        <div class="bg-white rounded-xl p-3 border border-green-200">
+          <div class="text-green-600 text-lg mb-1">✅</div>
+          <div class="text-sm font-bold text-gray-800">Invoicing Right</div>
+          <div class="text-xs text-gray-600">Audit-ready</div>
+        </div>
+        <div class="bg-white rounded-xl p-3 border border-green-200">
+          <div class="text-green-600 text-lg mb-1">✅</div>
+          <div class="text-sm font-bold text-gray-800">80% Tracked</div>
+          <div class="text-xs text-gray-600">Safe from reclassification</div>
+        </div>
+      </div>
+
+      <p class="text-gray-800 mb-4">Want to save even more on payment fees?</p>
+      <a href="https://onelink.ext.cenoa.com/K9pU/cenoacomstart" class="inline-block bg-cenoa-blue text-white font-bold px-8 py-3.5 rounded-xl hover:bg-cenoa-dark transition-colors text-lg shadow-lg">
+        Learn How Cenoa Works →
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<!-- ===== FOOTER CTA ===== -->
+<footer class="footer-cta">
+  <div class="max-w-3xl mx-auto">
+    <h2>Stop losing money on fees.</h2>
+    <p>Open your free account with Cenoa — 0.99% flat fee, no hidden charges.</p>
+    <a href="https://onelink.ext.cenoa.com/K9pU/cenoacomstart" class="footer-cta-btn">Open Free Account</a>
+  </div>
+</footer>
+
+<script>
+// ===================================================================
+// STATE
+// ===================================================================
+const STORAGE_KEY = 'pk-freelancer-guide';
+let state = loadState();
+
+function defaultState() {
+  return {
+    steps: [false, false, false, false, false, false],
+    calculator: { monthly: 1500, method: 'payoneer', pseb: 'unknown', filer: 'unsure' },
+    repatriation: { total: '', bank: '', esfca: '' },
+    calculated: false
+  };
+}
+
+function loadState() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      // merge with defaults to handle missing keys
+      return { ...defaultState(), ...parsed };
+    }
+  } catch(e) {}
+  return defaultState();
+}
+
+function saveState() {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e) {}
+}
+
+// ===================================================================
+// INIT — Restore saved state
+// ===================================================================
+document.addEventListener('DOMContentLoaded', function() {
+  // Restore calculator inputs
+  document.getElementById('monthlyIncome').value = state.calculator.monthly;
+  document.getElementById('incomeSlider').value = state.calculator.monthly;
+  document.getElementById('paymentMethod').value = state.calculator.method;
+  document.getElementById('psebStatus').value = state.calculator.pseb;
+  document.getElementById('filerStatus').value = state.calculator.filer;
+  updateAnnualDisplay();
+
+  // Restore checkboxes
+  for (let i = 0; i < 6; i++) {
+    document.getElementById('check' + (i + 1)).checked = state.steps[i];
+  }
+
+  // Restore repatriation
+  if (state.repatriation.total) document.getElementById('repTotal').value = state.repatriation.total;
+  if (state.repatriation.bank) document.getElementById('repBank').value = state.repatriation.bank;
+  if (state.repatriation.esfca) document.getElementById('repESFCA').value = state.repatriation.esfca;
+  calculateRepatriation();
+
+  // If previously calculated, show results
+  if (state.calculated) {
+    calculateSavings(true);
+  }
+
+  updateProgressBar();
+});
+
+// ===================================================================
+// SLIDER <-> INPUT SYNC
+// ===================================================================
+function syncSlider() {
+  const val = parseInt(document.getElementById('monthlyIncome').value) || 100;
+  document.getElementById('incomeSlider').value = val;
+  updateAnnualDisplay();
+}
+
+function syncInput() {
+  const val = parseInt(document.getElementById('incomeSlider').value) || 100;
+  document.getElementById('monthlyIncome').value = val;
+  updateAnnualDisplay();
+}
+
+function updateAnnualDisplay() {
+  const m = parseInt(document.getElementById('monthlyIncome').value) || 0;
+  document.getElementById('annualDisplay').textContent = '$' + (m * 12).toLocaleString() + '/yr';
+}
+
+// ===================================================================
+// SAVINGS CALCULATOR
+// ===================================================================
+let calcResults = null; // store for use by progress bar
+
+function calculateSavings(silent) {
+  const monthly = parseInt(document.getElementById('monthlyIncome').value) || 1500;
+  const method = document.getElementById('paymentMethod').value;
+  const pseb = document.getElementById('psebStatus').value;
+  const filer = document.getElementById('filerStatus').value;
+  const annual = monthly * 12;
+
+  // Save to state
+  state.calculator = { monthly, method, pseb, filer };
+  state.calculated = true;
+  saveState();
+
+  // --- Platform Fee Calculation ---
+  let currentPlatformFee = 0;
+  let platformLabel = '';
+
+  if (method === 'payoneer') {
+    const receivingFee = annual * 0.01;   // 1%
+    const fxMarkup = annual * 0.025;      // 2.5%
+    currentPlatformFee = receivingFee + fxMarkup; // 3.5%
+    platformLabel = 'Payoneer fees (1% receiving + 2.5% FX)';
+  } else if (method === 'wise') {
+    const transferFee = annual * 0.01;    // 1%
+    const fxMarkup = annual * 0.005;      // 0.5%
+    currentPlatformFee = transferFee + fxMarkup; // 1.5%
+    platformLabel = 'Wise fees (1% transfer + 0.5% FX)';
+  } else if (method === 'wire') {
+    currentPlatformFee = 24 * 25;         // $600/yr
+    platformLabel = 'Wire transfer fees (~$25 × 24/yr)';
+  } else {
+    // Other/mixed — assume Payoneer-like
+    currentPlatformFee = annual * 0.03;
+    platformLabel = 'Estimated platform fees (~3%)';
+  }
+
+  const cenoaFee = annual * 0.0099;       // 0.99%
+  const platformSavings = Math.max(0, currentPlatformFee - cenoaFee);
+
+  // --- Tax Calculation ---
+  let currentTaxRate, currentTaxLabel;
+  if (pseb === 'yes') {
+    currentTaxRate = 0.0025; // already registered
+    currentTaxLabel = '0.25% (PSEB registered)';
+  } else {
+    currentTaxRate = 0.01;   // 1%
+    currentTaxLabel = '1% (no PSEB registration)';
+  }
+  const optimizedTaxRate = 0.0025;
+  const currentTax = annual * currentTaxRate;
+  const optimizedTax = annual * optimizedTaxRate;
+  const taxSavings = Math.max(0, currentTax - optimizedTax);
+
+  // --- Non-filer Costs ---
+  let nonFilerLow = 0, nonFilerHigh = 0, nonFilerLabel = '';
+  const isFiler = filer === 'yes';
+  if (!isFiler) {
+    nonFilerLow = 100;
+    nonFilerHigh = 525;
+    nonFilerLabel = '~$' + nonFilerLow + '–$' + nonFilerHigh + '/yr est.';
+  } else {
+    nonFilerLabel = '$0';
+  }
+  const nonFilerMid = (nonFilerLow + nonFilerHigh) / 2;
+
+  // --- 80% rule ---
+  const is80Unknown = true; // always show as benefit
+
+  // --- Totals ---
+  const totalCurrentLow = currentPlatformFee + currentTax + nonFilerLow;
+  const totalCurrentHigh = currentPlatformFee + currentTax + nonFilerHigh;
+  const totalOptimized = cenoaFee + optimizedTax;
+  const totalSaveLow = totalCurrentLow - totalOptimized;
+  const totalSaveHigh = totalCurrentHigh - totalOptimized;
+  const totalSaveMid = (totalSaveLow + totalSaveHigh) / 2;
+
+  // Store results for progress bar
+  calcResults = {
+    platformSavings,
+    taxSavings,
+    nonFilerMid,
+    nonFilerLow,
+    nonFilerHigh,
+    totalSaveLow,
+    totalSaveHigh,
+    totalSaveMid,
+    annual,
+    isFiler,
+    psebRegistered: pseb === 'yes'
+  };
+
+  // --- Fill Results Panel ---
+  const fmt = v => '$' + Math.round(Math.abs(v)).toLocaleString();
+
+  document.getElementById('resultAnnualIncome').textContent = '$' + annual.toLocaleString() + '/year';
+
+  // Platform
+  document.getElementById('r-currentPlatform').textContent = '-' + fmt(currentPlatformFee) + '/yr';
+  document.getElementById('r-optimizedPlatform').textContent = '-' + fmt(cenoaFee) + '/yr (Cenoa 0.99%)';
+  document.getElementById('r-savePlatform').textContent = fmt(platformSavings);
+
+  // Tax
+  document.getElementById('r-currentTax').textContent = currentTaxLabel + ' (-' + fmt(currentTax) + ')';
+  document.getElementById('r-optimizedTax').textContent = '0.25% (-' + fmt(optimizedTax) + ')';
+  document.getElementById('r-saveTax').textContent = taxSavings > 0 ? fmt(taxSavings) : '$0';
+
+  // Non-filer
+  if (!isFiler) {
+    document.getElementById('r-currentNonFiler').textContent = nonFilerLabel;
+    document.getElementById('r-optimizedNonFiler').textContent = '$0';
+    document.getElementById('r-saveNonFiler').textContent = nonFilerLabel;
+  } else {
+    document.getElementById('r-currentNonFiler').textContent = '$0 (you file)';
+    document.getElementById('r-optimizedNonFiler').textContent = '$0';
+    document.getElementById('r-saveNonFiler').textContent = '$0';
+  }
+
+  // 80%
+  document.getElementById('r-current80').textContent = '⚠️ Not tracking — risk of 45% tax';
+
+  // Totals
+  if (nonFilerHigh > 0) {
+    document.getElementById('r-totalCurrent').textContent = '-' + fmt(totalCurrentLow) + ' to -' + fmt(totalCurrentHigh) + '/yr';
+    document.getElementById('r-totalSave').textContent = '💰 ' + fmt(totalSaveLow) + '–' + fmt(totalSaveHigh) + '/yr';
+  } else {
+    document.getElementById('r-totalCurrent').textContent = '-' + fmt(totalCurrentLow) + '/yr';
+    document.getElementById('r-totalSave').textContent = '💰 ' + fmt(totalSaveLow) + '/yr';
+  }
+  document.getElementById('r-totalOptimized').textContent = '-' + fmt(totalOptimized) + '/yr';
+
+  // Big savings
+  if (nonFilerHigh > 0) {
+    document.getElementById('bigSavings').textContent = fmt(totalSaveLow) + '–' + fmt(totalSaveHigh);
+    const monthlyLow = Math.round(totalSaveLow / 12);
+    const monthlyHigh = Math.round(totalSaveHigh / 12);
+    document.getElementById('monthlySavingsText').textContent =
+      "That's $" + monthlyLow.toLocaleString() + '–$' + monthlyHigh.toLocaleString() + ' extra in your pocket every month';
+  } else {
+    document.getElementById('bigSavings').textContent = fmt(totalSaveLow);
+    document.getElementById('monthlySavingsText').textContent =
+      "That's $" + Math.round(totalSaveLow / 12).toLocaleString() + ' extra in your pocket every month';
+  }
+
+  // Detailed breakdown
+  let breakdown = '';
+  breakdown += '<div class="bg-red-50 rounded-lg p-4 border border-red-200">';
+  breakdown += '<p class="font-bold text-red-700 mb-2">🔴 WHAT YOU\'RE LOSING NOW:</p>';
+  breakdown += '<ul class="space-y-1 text-red-700">';
+  breakdown += '<li>├── ' + platformLabel + ': <strong>-' + fmt(currentPlatformFee) + '/yr</strong></li>';
+  breakdown += '<li>├── Tax at ' + currentTaxLabel + ': <strong>-' + fmt(currentTax) + '/yr</strong></li>';
+  if (!isFiler) {
+    breakdown += '<li>├── Non-filer penalties on daily life: <strong>-$' + nonFilerLow + ' to $' + nonFilerHigh + '/yr (est.)</strong></li>';
+  }
+  breakdown += '<li>├── 80% rule compliance: <strong>⚠️ Not tracking — risk of 45% tax</strong></li>';
+  breakdown += '<li class="font-bold pt-1">│   Total losses: ~' + fmt(totalCurrentLow);
+  if (nonFilerHigh > 0) breakdown += ' to ' + fmt(totalCurrentHigh);
+  breakdown += '/yr</li>';
+  breakdown += '</ul></div>';
+
+  breakdown += '<div class="bg-green-50 rounded-lg p-4 border border-green-200 mt-3">';
+  breakdown += '<p class="font-bold text-green-700 mb-2">🟢 AFTER COMPLETING THE JOURNEY:</p>';
+  breakdown += '<ul class="space-y-1 text-green-700">';
+  breakdown += '<li>├── Cenoa fees (0.99%): <strong>-' + fmt(cenoaFee) + '/yr</strong></li>';
+  breakdown += '<li>├── Tax at 0.25% (PSEB registered): <strong>-' + fmt(optimizedTax) + '/yr</strong></li>';
+  breakdown += '<li>├── Filer status (reduced rates everywhere): <strong>$0 extra</strong></li>';
+  breakdown += '<li>├── 80% rule tracking: <strong>✅ Protected</strong></li>';
+  breakdown += '<li class="font-bold pt-1">│   Total costs: ~' + fmt(totalOptimized) + '/yr</li>';
+  breakdown += '</ul></div>';
+
+  document.getElementById('detailedBreakdown').innerHTML = breakdown;
+
+  // Show results panel
+  const panel = document.getElementById('resultsPanel');
+  panel.classList.remove('hidden');
+  panel.classList.add('visible');
+
+  // Update step-specific savings displays
+  updateStepSavings();
+  updateProgressBar();
+
+  // Scroll to results (unless silent restore)
+  if (!silent) {
+    panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+function updateStepSavings() {
+  if (!calcResults) return;
+  const { nonFilerLow, nonFilerHigh, platformSavings, taxSavings, annual } = calcResults;
+  const fmt = v => '$' + Math.round(v).toLocaleString();
+
+  if (nonFilerLow > 0) {
+    document.getElementById('step1-savings').textContent = '$' + nonFilerLow + '–$' + nonFilerHigh + '/yr saved';
+  } else {
+    document.getElementById('step1-savings').textContent = 'Already a filer ✅';
+  }
+
+  document.getElementById('step3-savings').textContent = fmt(platformSavings) + '/yr saved';
+
+  if (taxSavings > 0) {
+    document.getElementById('step4-savings').textContent = fmt(taxSavings) + '/yr saved';
+  } else {
+    document.getElementById('step4-savings').textContent = 'Already at 0.25% ✅';
+  }
+}
+
+// ===================================================================
+// ACCORDION
+// ===================================================================
+function toggleAccordion(num) {
+  const body = document.getElementById('body' + num);
+  const chevron = document.getElementById('chevron' + num);
+  const isOpen = body.classList.contains('open');
+
+  if (isOpen) {
+    body.classList.remove('open');
+    chevron.classList.remove('rotate');
+  } else {
+    body.classList.add('open');
+    chevron.classList.add('rotate');
+  }
+}
+
+// ===================================================================
+// STEP CHECKBOXES
+// ===================================================================
+function toggleStep(num) {
+  const checked = document.getElementById('check' + num).checked;
+  state.steps[num - 1] = checked;
+  saveState();
+  updateProgressBar();
+}
+
+// ===================================================================
+// PROGRESS BAR
+// ===================================================================
+function updateProgressBar() {
+  const completed = state.steps.filter(Boolean).length;
+  const pct = (completed / 6) * 100;
+
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = 'Step ' + completed + ' of 6';
+
+  // Calculate savings per step
+  let totalPossibleSavings = 0;
+  let unlockedSavings = 0;
+
+  if (calcResults) {
+    // Step savings allocation:
+    // Step 1: non-filer savings
+    // Step 2: 0 (foundation)
+    // Step 3: platform savings
+    // Step 4: tax savings
+    // Step 5: 0 (insurance)
+    // Step 6: 0 (protection)
+    const stepValues = [
+      calcResults.nonFilerMid,     // Step 1
+      0,                            // Step 2
+      calcResults.platformSavings,  // Step 3
+      calcResults.taxSavings,       // Step 4
+      0,                            // Step 5
+      0                             // Step 6
+    ];
+
+    totalPossibleSavings = stepValues.reduce((a, b) => a + b, 0);
+    unlockedSavings = stepValues.reduce((a, b, i) => a + (state.steps[i] ? b : 0), 0);
+  }
+
+  const fmt = v => '$' + Math.round(v).toLocaleString();
+  document.getElementById('progressSavings').textContent = 'Savings unlocked: ' + fmt(unlockedSavings) + '/yr';
+  document.getElementById('unlockedText').textContent = '✅ ' + fmt(unlockedSavings) + '/yr unlocked';
+  document.getElementById('remainingText').textContent = '🔓 ' + fmt(Math.max(0, totalPossibleSavings - unlockedSavings)) + '/yr remaining';
+
+  // Show/hide completion section
+  const completionSection = document.getElementById('completionSection');
+  if (completed === 6) {
+    completionSection.style.display = 'block';
+    if (calcResults) {
+      const { totalSaveLow, totalSaveHigh } = calcResults;
+      const savingsText = totalSaveHigh > totalSaveLow
+        ? '$' + Math.round(totalSaveLow).toLocaleString() + '–$' + Math.round(totalSaveHigh).toLocaleString()
+        : '$' + Math.round(totalSaveLow).toLocaleString();
+      document.getElementById('completionSavingsText').textContent =
+        "You've optimized your freelancing finances and can save ~" + savingsText + "/year!";
+    }
+  } else {
+    completionSection.style.display = 'none';
+  }
+}
+
+// ===================================================================
+// 80% REPATRIATION TRACKER
+// ===================================================================
+function calculateRepatriation() {
+  const total = parseFloat(document.getElementById('repTotal').value) || 0;
+  const bank = parseFloat(document.getElementById('repBank').value) || 0;
+  const esfca = parseFloat(document.getElementById('repESFCA').value) || 0;
+
+  // Save to state
+  state.repatriation = {
+    total: document.getElementById('repTotal').value,
+    bank: document.getElementById('repBank').value,
+    esfca: document.getElementById('repESFCA').value
+  };
+  saveState();
+
+  const repatriated = bank + esfca;
+  const pct = total > 0 ? (repatriated / total) * 100 : 0;
+
+  document.getElementById('repRepatriated').textContent = '$' + Math.round(repatriated).toLocaleString();
+
+  const pctEl = document.getElementById('repPercentage');
+  pctEl.textContent = total > 0 ? pct.toFixed(1) + '%' : '0%';
+
+  const gauge = document.getElementById('repGauge');
+  const msgEl = document.getElementById('repMessage');
+
+  // Cap gauge at 100%
+  gauge.style.width = Math.min(pct, 100) + '%';
+
+  if (total === 0) {
+    gauge.style.backgroundColor = '#6b7280';
+    pctEl.style.color = '#4b5563';
+    msgEl.className = 'text-sm font-semibold p-3 rounded-lg bg-gray-100 text-gray-600 text-center';
+    msgEl.textContent = 'Enter your amounts above to track your repatriation status.';
+  } else if (pct >= 85) {
+    gauge.style.backgroundColor = '#22c55e';
+    pctEl.style.color = '#16a34a';
+    msgEl.className = 'text-sm font-semibold p-3 rounded-lg bg-green-100 text-green-700 text-center';
+    msgEl.textContent = '✅ Great! You\'re well above the 80% threshold. Keep it up!';
+  } else if (pct >= 80) {
+    gauge.style.backgroundColor = '#eab308';
+    pctEl.style.color = '#ca8a04';
+    msgEl.className = 'text-sm font-semibold p-3 rounded-lg bg-yellow-100 text-yellow-700 text-center';
+    const needed = Math.ceil(total * 0.85 - repatriated);
+    msgEl.textContent = '⚠️ You\'re just at the threshold. Repatriate $' + needed.toLocaleString() + ' more to have a comfortable margin above 85%.';
+  } else {
+    gauge.style.backgroundColor = '#ef4444';
+    pctEl.style.color = '#dc2626';
+    msgEl.className = 'text-sm font-semibold p-3 rounded-lg bg-red-100 text-red-700 text-center';
+    const needed = Math.ceil(total * 0.80 - repatriated);
+    msgEl.textContent = '🚨 Below 80%! You need to repatriate $' + Math.max(0, needed).toLocaleString() + ' more before June 30 to stay compliant.';
+  }
+}
+
+// ===================================================================
+// SCROLL TO JOURNEY
+// ===================================================================
+function scrollToJourney() {
+  document.getElementById('journeySection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+</script>
+</body>
+</html>
